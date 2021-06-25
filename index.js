@@ -1,7 +1,20 @@
-let container = document.querySelector(".container")
-
+let table = document.querySelector(".table")
 var slider = document.getElementById("slider");
-var selector = document.getElementById("selector");
+
+function createSketchArea(num_squares) {
+    for (let i = 0; i <= num_squares; i++) {
+        const tr = document.createElement("tr");
+        table.appendChild(tr).classList.add("rows");
+        for (let i = 0; i <= num_squares; i++) {
+            const td = document.createElement("td");
+            tr.appendChild(td).classList.add("cells");
+
+        }
+        // const td = document.createElement("td")
+        // .classList.add("pixel")
+
+    }
+}
 
 slider.oninput = function () {
     //selector.style.left = this.value + "%";
@@ -10,16 +23,9 @@ slider.oninput = function () {
 }
 
 
-function createSketchArea(num_squares) {
-    for (let i = 0; i <= num_squares * num_squares; i++) {
-        const div = document.createElement("div");
-        container.appendChild(div).classList.add("pixel");
 
-    }
-}
 // need ot make it so only the num_squares of the squares are on each line
 // max number on a line should be 100 (so 100x100 total)
 
-// calculate how 
+createSketchArea(20);
 
-createSketchArea(10)

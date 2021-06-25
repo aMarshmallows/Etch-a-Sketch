@@ -41,7 +41,7 @@ main {
   width: 800px;
   height: 800px;
   margin: 20px;
-  display: grid;
+  display: flex;
   grid-template-columns: 20px; /* will be container pixels divided by number of divs per line */
   grid-template-rows: 20px;
 }
@@ -83,6 +83,13 @@ main {
   font-weight: bold;
 
 }
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
 
 .pixel {
   background-color: aqua;
@@ -91,5 +98,5 @@ main {
   padding: 2px;
   width: 10px;
   height: 10px;
-  justify-self: stretch;
+  display: inline-block;
 }
