@@ -27,7 +27,7 @@ main {
   height: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .center {
@@ -48,12 +48,13 @@ main {
 
 .slider {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 40%;
+  align-items: center;
 }
 #slider {
   -webkit-appearance: none;
-  width: 100%;
+  width: 80%;
   height: 7px;
   outline: none;
   border-radius: 3px;
@@ -71,33 +72,13 @@ main {
   
 }
 
-#selector {
-  height: 50%;
-  width: 10%;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.SelectBttn {
-  height: 50%;
-  width: 50%;
-  background-color: brown;
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  bottom: 0;
-}
-
 #SelectValue {
-  width: 50%;
+  width: 10%;
   height: 50%;
-  position: absolute;
   top: 0;
-  background-color: blueviolet;
+  background-color: beige;
   border-radius: 4px;
   text-align: center;
-  line-height: 45px;
   font-size: 20px;
   font-weight: bold;
 

@@ -4,7 +4,9 @@ var slider = document.getElementById("slider");
 var selector = document.getElementById("selector");
 
 slider.oninput = function () {
-    selector.style.left = this.value + "%";
+    //selector.style.left = this.value + "%";
+    let val = this.value;
+    document.getElementById("SelectValue").innerHTML = val;
 }
 
 
