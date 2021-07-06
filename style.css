@@ -84,6 +84,7 @@ main {
 
 table {
   width: 100%;
+  border-spacing: 0;
 }
 
 table,
@@ -102,4 +103,12 @@ td {
   display: table-cell;
   vertical-align: inherit;
   border: 1px solid black;
+}
+
+.colorCell {
+  background-color: black;
+}
+
+.clearCell {
+  background-color: inherit;
 }

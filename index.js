@@ -1,48 +1,60 @@
 let table = document.querySelector(".table")
 var slider = document.getElementById("slider");
+var cells = document.getElementsByClassName("cells");
+var clearButton = document.getElementById("clearButton");
+
+function colorCells() {
+     // enables mouseover coloring of cells
+     for (let i = 0; i < cells.length; i++) {
+        cells[i].addEventListener('mouseover', function colorCells() {
+            cells[i].classList.add("colorCell");
+        }
+        );
+    }
+}
 
 function createSketchArea(num_squares) {
     let row_counter = 1;
     let col_counter = 1;
-    // want to name the rows and columns xxx-xxx by numbers
+    // creates a table with all rows and cols numbered (useful for later projects)
     for (let i = 0; i <= num_squares; i++) {
-        let row_name = "tr" + String(row_counter);
+        const row_name = "tr" + String(row_counter);
         const tr = document.createElement(row_name);
         table.appendChild(tr).classList.add("rows");
         for (let j = 0; j <= num_squares; j++) {
-            let col_name = "td" + String(col_counter);
+            const col_name = "td" + String(col_counter);
             const td = document.createElement(col_name);
             tr.appendChild(td).classList.add("cells");
             col_counter++;
-
         }
         col_counter = 1;
         row_counter++;
-
     }
+    colorCells();
 }
 
-function deleteSketchArea(num_squares) {
-    for (let i = 0; i <= num_squares; i++) {
-        for (let j = 0; j <= num-num_squares; j++) {
-            
-        }
+// deletes grid so new slider value can be used to make a new grid
+function deleteSketchArea() {
+    while(table.firstChild) {
+        table.removeChild(table.firstChild)
     }
 }
-
-slider.onclick = function () {
-    //selector.style.left = this.value + "%";
+// slider value gives num of grid cells per row and col
+slider.onclick = function dynamicGridSize() {
     let val = this.value;
     document.getElementById("SelectValue").innerHTML = val
-    // options - call createSketchArea every time range slider is moved
-    // change size of divs somehow 
+    deleteSketchArea();
     createSketchArea(val);
 }
 
-
-
-// need ot make it so only the num_squares of the squares are on each line
-// max number on a line should be 100 (so 100x100 total)
+// clear all colored cells
+clearButton.onclick = function clearGrid() {
+    for (let i = 0; i < cells.length; i++) {
+        if (cells[i].classList.contains("colorCell")) {
+            cells[i].classList.toggle("colorCell");
+        }
+    }
+}
 
 
 
