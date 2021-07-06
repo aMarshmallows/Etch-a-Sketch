@@ -92,12 +92,14 @@ td {
   border: 1px solid black;
 }
 
-.pixel {
-  background-color: aqua;
-  border-color: black;
-  border-width: 2px;
-  padding: 2px;
-  width: 10px;
-  height: 10px;
-  display: inline-block;
+.rows {
+  display: table-row;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.cells {
+  display: table-cell;
+  vertical-align: inherit;
+  border: 1px solid black;
 }

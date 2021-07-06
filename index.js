@@ -7,17 +7,17 @@ function createSketchArea(num_squares) {
     // want to name the rows and columns xxx-xxx by numbers
     for (let i = 0; i <= num_squares; i++) {
         let row_name = "tr" + String(row_counter);
-        console.log(row_name);
-        const tr = document.createElement("tr");
+        const tr = document.createElement(row_name);
         table.appendChild(tr).classList.add("rows");
         for (let j = 0; j <= num_squares; j++) {
-            const td = document.createElement("td");
+            let col_name = "td" + String(col_counter);
+            const td = document.createElement(col_name);
             tr.appendChild(td).classList.add("cells");
+            col_counter++;
 
         }
+        col_counter = 1;
         row_counter++;
-        // const td = document.createElement("td")
-        // .classList.add("pixel")
 
     }
 }
