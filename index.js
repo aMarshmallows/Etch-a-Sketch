@@ -2,16 +2,19 @@ let table = document.querySelector(".table")
 var slider = document.getElementById("slider");
 var cells = document.getElementsByClassName("cells");
 var clearButton = document.getElementById("clearButton");
+var eraseButton = document.getElementById("eraseButton");
+var eraseOnClick = true;
 
 function colorCells() {
-     // enables mouseover coloring of cells
-     for (let i = 0; i < cells.length; i++) {
+    // enables mouseover coloring of cells
+    for (let i = 0; i < cells.length; i++) {
         cells[i].addEventListener('mouseover', function colorCells() {
             cells[i].classList.add("colorCell");
         }
         );
     }
 }
+
 
 function createSketchArea(num_squares) {
     let row_counter = 1;
@@ -56,5 +59,34 @@ clearButton.onclick = function clearGrid() {
     }
 }
 
+function erase(i) {
+    if (cells[i].classList.contains("colorCell")) {
+        cells[i].classList.toggle("colorCell");
+    } 
+}
+
+// clear all colored cells
+eraseButton.onclick = function EraseCells() {
+    // if want to enable erasing on button click
+    if (eraseOnClick == true) {
+        eraseButton.style.backgroundColor = "#6cca63";
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].addEventListener('mouseover', function erase() {
+                if (cells[i].classList.contains("colorCell")) {
+                    cells[i].classList.toggle("colorCell");
+                } 
+            } 
+            );
+        }
+        eraseOnClick = false;
+    }
+    // if want to stop erase function and continue drawing
+    else if (eraseOnClick == false) {
+        eraseButton.style.backgroundColor = "#8fd63e";
+        colorCells();
+        eraseOnClick = true;
+    }
+    
+}
 
 
