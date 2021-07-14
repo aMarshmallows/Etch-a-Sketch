@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> 
+    <link rel="stylesheet" href="style.css">
+    <title>Etch A Sketch Project</title>
+</head>
+
+<body>
+    <header>
+        <h1>Etch A Sketch!</h1>
+    </header>
+    <main>
+        <div class="options">
+            <div id="buttonContainer">
+                <div class="color-picker"></div>
+                <button id="clearButton" class ="buttons">Clear</button>
+                <button id="eraseButton"class="buttons">Erase</button>
+            </div>
+            <!-- add slider for resolution for size of grid-->
+            <div class="slider">
+                <input type="range" min="1" max="100" value="50" id="slider">
+                <div id="SelectValue"></div>
+            </div>
+
+
+        </div>
+        <div class="center">
+            <div class="container">
+                <!--Make grid here -->
+                <table class="table">
+
+                </table>
+            </div>
+        </div>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="index.js">
+
+    </script>
+    
+
+</body>
+
+</html>
