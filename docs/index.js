@@ -96,7 +96,6 @@ function deleteSketchArea() {
 pickr.on('save', (color, instance) => {
     currColor = color.toRGBA();
     currColor = `rgba(${currColor[0]}, ${currColor[1]}, ${currColor[2]}, ${currColor[3]})`;
-    console.log('Event: "save"', currColor);
     colorCells(currColor);
 })
 
@@ -132,6 +131,14 @@ eraseButton.onclick = function eraseCells() {
     }
     
 }
+
+window.addEventListener("resize", function() {
+    if (window.matchMedia("(min-width: 500px)").matches) {
+      console.log("Screen width is at least 500px")
+    } else {
+      console.log("Screen less than 500px")
+    }
+  })
 
 // slider value gives num of grid cells per row and col
 slider.onclick = function dynamicGridSize() {
